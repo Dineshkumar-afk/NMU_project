@@ -2,14 +2,14 @@ import { useState, useMemo, useEffect, useRef } from "react";
 
 /* ─── Seed Data ─────────────────────────────────────────────────────────── */
 const SEED = [
-  { id: 1, description: "Monthly Salary", amount: 5200, type: "income",  category: "Salary",        date: "2025-06-01" },
-  { id: 2, description: "Apartment Rent", amount: 1400, type: "expense", category: "Rent/Utilities", date: "2025-06-02" },
-  { id: 3, description: "Grocery Run",    amount: 120,  type: "expense", category: "Food",           date: "2025-06-05" },
-  { id: 4, description: "Freelance gig",  amount: 800,  type: "income",  category: "Freelance",      date: "2025-06-08" },
-  { id: 5, description: "Netflix + Gym",  amount: 55,   type: "expense", category: "Entertainment",  date: "2025-06-09" },
-  { id: 6, description: "Bus pass",       amount: 40,   type: "expense", category: "Transport",      date: "2025-06-10" },
-  { id: 7, description: "New shoes",      amount: 95,   type: "expense", category: "Shopping",       date: "2025-06-12" },
-  { id: 8, description: "ETF dividend",   amount: 230,  type: "income",  category: "Investments",    date: "2025-06-14" },
+  { id: 1, description: "Monthly Salary", amount: 52000, type: "income",  category: "Salary",        date: "2025-06-01" },
+  { id: 2, description: "Apartment Rent", amount: 14000, type: "expense", category: "Rent/Utilities", date: "2025-06-02" },
+  { id: 3, description: "Grocery Run",    amount: 1200,  type: "expense", category: "Food",           date: "2025-06-05" },
+  { id: 4, description: "Freelance gig",  amount: 8000,  type: "income",  category: "Freelance",      date: "2025-06-08" },
+  { id: 5, description: "Netflix + Gym",  amount: 550,   type: "expense", category: "Entertainment",  date: "2025-06-09" },
+  { id: 6, description: "Bus pass",       amount: 400,   type: "expense", category: "Transport",      date: "2025-06-10" },
+  { id: 7, description: "New shoes",      amount: 950,   type: "expense", category: "Shopping",       date: "2025-06-12" },
+  { id: 8, description: "ETF dividend",   amount: 2300,  type: "income",  category: "Investments",    date: "2025-06-14" },
 ];
 
 const INCOME_CATS  = ["Salary", "Freelance", "Investments", "Other"];
@@ -26,7 +26,7 @@ const CAT_COLORS = {
 
 /* ─── Helpers ───────────────────────────────────────────────────────────── */
 const fmt = (n) =>
-  new Intl.NumberFormat("en-US", { style: "currency", currency: "USD", maximumFractionDigits: 2 }).format(n);
+  new Intl.NumberFormat("en-IN", { style: "currency", currency: "INR", maximumFractionDigits: 2 }).format(n);
 
 const today = () => new Date().toISOString().slice(0, 10);
 
@@ -208,7 +208,7 @@ export default function ExpenseDashboard() {
 
               <div className="field-row">
                 <div className="field">
-                  <label>Amount (USD)</label>
+                  <label>Amount (INR)</label>
                   <input
                     type="number"
                     min="0"
